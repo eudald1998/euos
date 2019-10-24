@@ -1,0 +1,98 @@
+using System;
+
+namespace whileej1111
+{
+	class Program
+	{
+    	static void Main(string[] args)
+    	{
+        	int numero = 1;
+        	int numero1 = 0;
+        	int maximo = 0;
+        	int minimo = 0;
+        	int media = 0;
+        	int suma = 0;
+        	int contador = 1;
+        	while (numero != 0)
+        	{
+            	Console.WriteLine("Introduce un numero");
+            	if (Int32.TryParse(Console.ReadLine(), out numero))
+            	{
+                	maximo = numero;
+                	minimo = numero;
+                	suma = numero;
+                	while (numero < 0)
+                	{
+                    	Console.WriteLine("El numero tiene que ser positivo, introduce otro");
+                	}
+                	while (numero == 0)
+                	{
+                    	suma = numero;
+                    	maximo = numero;
+                    	minimo = numero;
+                    	media = numero;
+                	}
+                	while (numero > 0)
+                	{
+                    	Console.WriteLine("Introduce otro número");
+                    	if (Int32.TryParse(Console.ReadLine(), out numero1))
+                    	{
+                        	if (numero > numero1)
+                        	{
+                            	if (maximo > numero)
+                            	{
+                                	maximo = maximo;
+                            	}
+                            	else
+                            	{
+                                	maximo = numero;
+                            	}
+                            	if (maximo > numero1)
+                            	{
+                                	maximo = maximo;
+                            	}
+                            	else
+                            	{
+                                	maximo = numero1;
+                            	}
+                            	if (minimo < numero)
+                            	{
+                                	minimo = minimo;
+                            	}
+                            	else
+                            	{
+                                	minimo = numero;
+                            	}
+                            	if (minimo < numero1)
+                            	{
+                                	minimo = minimo;
+                            	}
+                            	else
+                            	{
+                                	minimo = numero1;
+                            	}
+                        	}
+                        	suma = suma + numero;
+                        	contador++;
+                        	numero = numero1;
+                    	}
+                	}
+            	}
+            	else
+            	{
+                	Console.WriteLine("Introduce un numero entero");
+                	if (Int32.TryParse(Console.ReadLine(), out numero))
+                	{
+                    	Console.WriteLine("gracias");
+                	}
+            	}   
+        	}
+        	media = suma / contador;
+        	Console.WriteLine("El maximo es; {0}", maximo);
+        	Console.WriteLine("El minimo es: {0}", minimo);
+        	Console.WriteLine("La media es: {0}", media);
+        	Console.WriteLine("Pulsa una tecla para salir");
+        	Console.ReadKey();
+    	}
+	}
+}
